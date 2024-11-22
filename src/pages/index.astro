@@ -5,6 +5,8 @@ import MobileSocials from '@components/home/MobileSocials.astro';
 import { Pill } from '@eliancodes/brutal-ui';
 import { Button } from '@eliancodes/brutal-ui';
 import { Card } from '@eliancodes/brutal-ui';
+import { Image } from "astro:assets";
+import headshot from "../assets/headshot.png";
 
 const builtWith = [
   { name: 'Astro', url: 'https://astro.build/' },
@@ -28,32 +30,59 @@ const builtWith = [
   pageTitle='Brutal Theme | Home'
   description='Brutal is a minimalistic, neobrutalism theme for Astro.'
 >
-  <main class='bg-pink p-6'>
+  <main class='bg-green p-6'>
     <MobileSocials />
     <section id='about' class='grid md:grid-cols-8 gap-8 mt-4'>
       <h2 class='hidden'>About Brutal</h2>
       <div class='col-span-4'>
         <Card>
           <div class='flex flex-col justify-between items-start gap-4'>
-            <p class='mt-4 outfit text-2xl md:text-5xl lg:text-7xl'>
-              Brutal theme for <a
-                class='text-white'
-                target='_blank'
-                href='https://astro.build/'>Astro</a
-              >
+            <p class='mt-4 comico text-2xl md:text-5xl lg:text-7xl'>
+              🤌what are you looking for? 
             </p>
             <p class='mt-2 outfit text-xl md:text-3xl lg:text-5xl'>
-              A minimalistic, neobrutalism theme for Astro.
+              Need custom software for your firm or a bot with AI superpowers? 🚀 You landed in the right place 
             </p>
             <Button target={'_self'} href='/blog/'>
-              Check out the blog &rarr;
+              Check out my services &rarr;
             </Button>
           </div>
         </Card>
       </div>
       <div class='col-span-2'>
         <Card>
-          <h2 class='text-2xl md:text-4xl lg:text-6xl mb-8 dm-serif'>
+          <h2 class='text-2xl md:text-4xl lg:text-6xl mb-4 comico'>
+            Who am I?
+          </h2>
+          <p class='poppins'>
+            I'm a Full-Stack Developer living in a boring city in southern Italy, but hey, I don't have to pay house rent here, so it's okay.
+            Check my tech stack:
+           <ul class='flex gap-4 flex-wrap'>
+            {
+              builtWith.map((item) => (
+                <li>
+                  <Pill>
+                    <a
+                      class='sanchez'
+                      href={item.url}
+                      target='_blank'
+                      title={`Go to ${item.name}`}
+                    >
+                      {item.name}
+                    </a>
+                  </Pill>
+                </li>
+              ))
+            }
+          </ul> 
+          </p>
+         
+        </Card>
+       
+      </div>
+      <div class='col-span-2'>
+        <Card>
+         <!-- <h2 class='text-2xl md:text-4xl lg:text-6xl mb-8 dm-serif'>
             Brutal is built with
           </h2>
           <ul class='flex gap-4 flex-wrap'>
@@ -73,19 +102,18 @@ const builtWith = [
                 </li>
               ))
             }
-          </ul>
-        </Card>
-      </div>
-      <div class='col-span-2'>
-        <Card>
-          <h2 class='text-2xl md:text-4xl lg:text-6xl mb-4 dm-serif'>
-            What is Brutal?
-          </h2>
-          <p class='poppins'>
-            Brutal is a theme built with Astro, UnoCSS by <a
-              href='https://www.elian.codes/'>Elian</a
-            >. It's a simple, fast, and modern theme that is easy to use and
-            customize. Mainly meant to power blogs and personal websites.
+          </ul> -->
+          <p class='mt-2 sanchez text-xl md:text-3xl lg:text-5xl'>
+            This is my poker face 😐 (if you care)
+          </p>
+          <Image
+          src={headshot}
+          alt="Giuseppe Serra Headshot"
+          width={headshot.width}
+          height={headshot.height}
+          /> 
+          <p class='poppins text-xs'>
+            This is also my smiling, sad and angry face. Yes, I don't have facial expressions at all.     
           </p>
         </Card>
       </div>

@@ -72,5 +72,18 @@ const getFontPath = (name: string) => join(appDir, "public", "fonts", name);
         },
       ],
     },
+    {
+      display: "swap",
+      fallback: "serif",
+      selector: ".comico",
+      name: "Comico",
+      src: [
+        {
+          preload: false,
+          style: "normal",
+          path: getFontPath("comico.ttf"),
+        },
+      ],
+    },
   ]}
 />
