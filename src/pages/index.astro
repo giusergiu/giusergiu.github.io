@@ -6,15 +6,12 @@ import { Pill } from '@eliancodes/brutal-ui';
 import { Button } from '@eliancodes/brutal-ui';
 import { Card } from '@eliancodes/brutal-ui';
 import { Image } from "astro:assets";
-import headshot from "../assets/headshot.png";
+import headshot from "../assets/headshot-m.png";
 
 const builtWith = [
   { name: 'Astro', url: 'https://astro.build/' },
   { name: 'UnoCSS', url: 'https://uno.antfu.me/' },
-  {
-    name: 'Content Collections',
-    url: 'https://docs.astro.build/en/guides/content-collections/',
-  },
+  { name: 'Python', url: 'https://www.python.org/'},
   { name: 'RSS', url: 'https://docs.astro.build/en/guides/rss/' },
   {
     name: 'Sitemap',
@@ -35,7 +32,7 @@ const builtWith = [
     <section id='about' class='grid md:grid-cols-8 gap-8 mt-4'>
       <h2 class='hidden'>About Brutal</h2>
       <div class='col-span-4'>
-        <Card>
+        <Card color="#c084fc">
           <div class='flex flex-col justify-between items-start gap-4'>
             <p class='mt-4 comico text-2xl md:text-5xl lg:text-7xl'>
               🤌what are you looking for? 
@@ -50,13 +47,13 @@ const builtWith = [
         </Card>
       </div>
       <div class='col-span-2'>
-        <Card>
+        <Card color="#f87171">
           <h2 class='text-2xl md:text-4xl lg:text-6xl mb-4 comico'>
             Who am I?
           </h2>
           <p class='poppins'>
             I'm a Full-Stack Developer living in a boring city in southern Italy, but hey, I don't have to pay house rent here, so it's okay.
-            Check my tech stack:
+            <br>Check my tech stack:
            <ul class='flex gap-4 flex-wrap'>
             {
               builtWith.map((item) => (
@@ -78,41 +75,22 @@ const builtWith = [
           </p>
          
         </Card>
-       
       </div>
+      
       <div class='col-span-2'>
-        <Card>
-         <!-- <h2 class='text-2xl md:text-4xl lg:text-6xl mb-8 dm-serif'>
-            Brutal is built with
-          </h2>
-          <ul class='flex gap-4 flex-wrap'>
-            {
-              builtWith.map((item) => (
-                <li>
-                  <Pill>
-                    <a
-                      class='sanchez'
-                      href={item.url}
-                      target='_blank'
-                      title={`Go to ${item.name}`}
-                    >
-                      {item.name}
-                    </a>
-                  </Pill>
-                </li>
-              ))
-            }
-          </ul> -->
-          <p class='mt-2 sanchez text-xl md:text-3xl lg:text-5xl'>
+        <Card color="#2dd4bf">
+          <p class='mt-2 sanchez text-lg md:text-xl lg:text-3xl'>
             This is my poker face 😐 (if you care)
           </p>
-          <Image
-          src={headshot}
-          alt="Giuseppe Serra Headshot"
-          width={headshot.width}
-          height={headshot.height}
-          /> 
-          <p class='poppins text-xs'>
+          <div class='bg-[#fb923c] rounded-lg border-3 border-black card-shadow mt-5'>
+            <Image 
+            src={headshot}
+            alt="Giuseppe Headshot"
+            width={headshot.width}
+            height={headshot.height}
+            /> 
+          </div>
+          <p class='poppins text-xs mt-5'>
             This is also my smiling, sad and angry face. Yes, I don't have facial expressions at all.     
           </p>
         </Card>
